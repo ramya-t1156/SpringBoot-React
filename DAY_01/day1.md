@@ -1,7 +1,3 @@
-Absolutely! Let's go step-by-step and explain every part of your code and the XML configuration from scratch, assuming you are totally new to **Spring Framework** and **Beans**.
-
----
-
 ### 🧠 What is Spring and What Are Beans?
 
 * **Spring Framework** is a popular Java framework for building enterprise applications.
@@ -174,16 +170,13 @@ This is the **Spring configuration file** where you define beans.
 4. It then calls methods on those beans to simulate a student enrolling into different courses.
 
 ---
+from
+## pom.xml
 
-## 📌 Additional Notes
-
-* **Beans can have constructor arguments**, properties, or even dependency injection. Here you're using simple default constructors (no parameters).
-* The XML-based configuration is one of many ways to configure Spring. Others include annotations (`@Component`, `@Autowired`, etc.) and Java-based configuration.
-
----
-
-Let me know if you want me to:
-
-* Write the full class definitions for `Student`, `SpringBoot`, and `Course1/2/3` for clarity.
-* Explain how to use annotations instead of XML.
-* Help you set this up in an IDE like Eclipse or IntelliJ.
+| Element          | Purpose                                  |
+| ---------------- | ---------------------------------------- |
+| `<project>`      | Root tag for Maven                       |
+| `<groupId>`      | Project's org/domain name                |
+| `<artifactId>`   | Name of your app/module                  |
+| `<version>`      | Version of the app (e.g., dev, release)  |
+| `<dependencies>` | External libraries (Spring, JUnit, etc.) |
