@@ -1,1 +1,47 @@
+User → Controller → Service → Repository (JPA) → Hibernate → JDBC → MySQL
+                                                    ↑
+                                       Converts Java ↔ SQL
+------------------------------------------------------------------------------------------------------------------------------
+🔍 What is Hibernate?
 
+Hibernate is a Java-based Object-Relational Mapping (ORM) framework that lets you map Java classes to database tables and perform database operations using Java code.
+
+Hibernate = an implementation of JPA + extra powerful features
+
+Think of it like this:
+JPA is the standard specification (like a set of rules).
+Hibernate is the tool that implements those rules (and more).
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+🔍 What is JPA?
+JPA stands for Java Persistence API — it's a standard specification in Java for object-relational mapping (ORM). It allows you to map Java objects (like classes) to relational database tables — and manage data using Java code instead of SQL directly.
+
+- JPA helps you store, update, delete, and query Java objects in a database like MySQL/PostgreSQL.
+- It's a bridge between Java objects ↔ SQL database.
+- You write less boilerplate SQL — JPA does the heavy lifting.
+
+| Concept              | Explanation                                                 |
+| -------------------- | ----------------------------------------------------------- |
+| **Entity**           | A Java class annotated with `@Entity` representing a table. |
+| **@Id**              | Marks the primary key.                                      |
+| **@GeneratedValue**  | Auto-generates ID values.                                   |
+| **EntityManager**    | The core JPA interface used to interact with the database.  |
+| **Persistence Unit** | Configured data source and JPA provider (like Hibernate).   |
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 What is ORM?
+ORM stands for Object-Relational Mapping.
+
+It's a programming technique that allows you to map Java objects (classes) to database tables, so you can interact with the database using objects instead of SQL queries.
+
+🔄 Java Class ↔ Table
+🔄 Java Object ↔ Row in Table
+
+- ORM makes database access simpler and object-oriented.
+- You work with Java classes, not raw SQL.
+- Hibernate is a powerful ORM engine.
+- ORM helps you focus on logic, not database plumbing.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
