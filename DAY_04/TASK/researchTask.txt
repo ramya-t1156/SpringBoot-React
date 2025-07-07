@@ -1,0 +1,18 @@
+Question :- To delete all records from the table while preserving the schema.
+
+----------------------------------------------------------------------------------------
+@DeleteMapping
+public String deleteEmployees(){
+    return hws.deleteEmployees();
+}
+
+public String deleteEmployees(){
+    empRepo.deleteAll();
+    return "All employee deleted Successfully";
+}
+------------------------------------------------------------------------------------------
+
+What this does:
+- empRepo.deleteAll() → Deletes all rows from the table.
+- The table structure (schema) remains unchanged.
+- It's equivalent to running DELETE FROM employee; in SQL.
