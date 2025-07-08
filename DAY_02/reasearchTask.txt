@@ -1,3 +1,5 @@
+// why we go for stateless when we have stateful APIs
+
 ✅ Stateless API
 🔹 Definition:
 A stateless API does not store any information about the client or session between requests.
