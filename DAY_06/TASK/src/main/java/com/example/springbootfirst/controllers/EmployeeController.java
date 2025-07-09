@@ -32,7 +32,7 @@ public class EmployeeController {
 //    @PathVariable - getting the data from the path/url
 //    get by employee Id
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @PreAuthorize("hasRole('USER')")
     public Employee getEmployeeById(@PathVariable int id){
         return hws.getEmployeeById(id);
     }
