@@ -1,5 +1,3 @@
----
-
 ## 🔁 **Big Picture: Application Flow**
 
 Here’s a clear breakdown of the **flow**:
