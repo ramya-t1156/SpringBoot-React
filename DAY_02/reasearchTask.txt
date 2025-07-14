@@ -1,10 +1,10 @@
 // why we go for stateless when we have stateful APIs
 
-✅ Stateless API
-🔹 Definition:
+Stateless API
+Definition:
 A stateless API does not store any information about the client or session between requests.
 
-🔹 Characteristics:
+Characteristics:
 Every request is independent.
 
 The server does not remember anything about previous requests.
@@ -13,7 +13,7 @@ The client must send all necessary data with each request (like authentication t
 
 Common in REST APIs.
 
-🔹 Example:
+Example:
 http
 Copy
 Edit
@@ -21,94 +21,94 @@ GET /profile
 Authorization: Bearer <token>
 Even if the user just logged in, the server won’t remember it. The client must send the token every time.
 
-🔹 Pros:
+Pros:
 Scalable
 
 Simple to cache
 
 Easier to maintain
 
-🔹 Cons:
+Cons:
 More overhead on each request
 
 Less flexible for complex interactions
 
-✅ Stateful API
-🔹 Definition:
+Stateful API
+Definition:
 A stateful API retains information about the client between requests. It maintains state (like user sessions).
 
-🔹 Characteristics:
+Characteristics:
 Requests are dependent on previous ones.
 
 Server maintains session info (e.g., using session ID).
 
 Often seen in SOAP APIs, older systems, or specific use cases (like online games, banking sessions).
 
-🔹 Example:
+Example:
 User logs in.
 
 Server stores session and returns session ID.
 
 Next requests rely on that session being active.
 
-🔹 Pros:
+Pros:
 Reduces repeated data transmission
 
 Useful for long-lived sessions or transactions
 
-🔹 Cons:
+Cons:
 Less scalable (server must track sessions)
 
 More complex to manage (session timeout, memory usage, etc.)
 
-🔄 Summary Table:
+Summary Table:
 Feature              	                Stateless	              Stateful
-Server remembers?	                    ❌ No	                  ✅ Yes
-Each request is independent?	        ✅ Yes	                ❌ No
+Server remembers?	                     No	                    Yes
+Each request is independent?	        Yes	                    No
 Common in	                            REST APIs	              SOAP, WebSockets, some RPC APIs
-Scalable?	                            ✅ High scalability	    ❌ Lower scalability
+Scalable?	                            High scalability	      Lower scalability
 
 --------------------------------------------------------------------------------------------------------------------------
 
 We often prefer stateless APIs over stateful ones—especially in modern web development—for performance, scalability, and simplicity.
 
 
-✅ 1. Scalability
+1. Scalability
 Stateless APIs don’t store session info on the server, so any server can handle any request.
 
 This makes it easy to add more servers (horizontal scaling) and balance load.
 
-🌐 Example: If a website gets heavy traffic, more stateless servers can be spun up without worrying about shared session memory.
+Example: If a website gets heavy traffic, more stateless servers can be spun up without worrying about shared session memory.
 
 
-✅ 2. Simplicity & Reliability
+2. Simplicity & Reliability
 No need to manage session storage, session timeouts, or cleanup.
 
 Less chance of bugs from outdated or corrupted session data.
 
-🧠 Each request is independent and self-contained—easy to debug and understand.
+Each request is independent and self-contained—easy to debug and understand.
 
 
-✅ 3. Caching Benefits
+3. Caching Benefits
 Since each request is complete and independent, responses can be easily cached by browsers or CDN servers.
 
-📦 Cached GET requests mean faster load times and reduced server load.
+Cached GET requests mean faster load times and reduced server load.
 
 
-✅ 4. Better for Microservices & Cloud Architectures
+4. Better for Microservices & Cloud Architectures
 In cloud-native apps (like those using Docker, Kubernetes, AWS, etc.), services may move or restart.
 
 Stateless design ensures no problem if a server restarts or crashes—no session data is lost.
 
 
-✅ 5. Security
+5. Security
 Stateless APIs often use token-based authentication (like JWT), which is safer and more scalable than session IDs.
 
-🔐 No need to store session info means less chance of session hijacking.
+No need to store session info means less chance of session hijacking.
 
 
 
-🔁 When to Use Stateful APIs
+When to Use Stateful APIs
 We still use stateful APIs when:
 
 Session continuity is critical (like online banking or gaming).
@@ -123,10 +123,10 @@ Summary
 
 Feature	              Stateless	                            Stateful
 -------------------------------------------------------------------------
-Scalable	            ✅ Easily scalable	                  ❌ Harder to scale
-Server memory usage	  ✅ Low	                              ❌ High
-Failover friendly	    ✅ Yes	                              ❌ Risky
-Suited for	          REST APIs, microservices, cloud	      Sessions, transactions, games
+Scalable	             Easily scalable	                   Harder to scale
+Server memory usage	   Low	                               High
+Failover friendly	     Yes	                               Risky
+Suited for	          REST APIs, microservices, cloud	     Sessions, transactions, games
 
 
 We go for stateless APIs in most modern systems because they’re scalable, efficient, and easier to manage—perfect for distributed environments and cloud-native apps.
