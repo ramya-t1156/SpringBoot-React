@@ -1,28 +1,28 @@
-## 🔁 **Big Picture: Application Flow**
+## **Big Picture: Application Flow**
 
 Here’s a clear breakdown of the **flow**:
 
-### ✅ Step 1: **User Registers**
+### Step 1: **User Registers**
 
 * API: `POST /api/auth/register`
 * Data: username, password, roles, etc.
 * Handled by: `EmployeeService.addEmployee()`
 
-🟢 Password is **encoded** using `PasswordEncoder`.
+ Password is **encoded** using `PasswordEncoder`.
 
-🟢 Roles are validated and added.
+ Roles are validated and added.
 
-🟢 User is saved to DB (`RegisterDetailsRepository`).
+ User is saved to DB (`RegisterDetailsRepository`).
 
 ---
 
-### ✅ Step 2: **User Logs In**
+###  Step 2: **User Logs In**
 
 * API: `POST /api/auth/login`
 * Input: username, password
 * Handled by: your custom **auth method** (maybe in `AuthController` or a service)
 
-🟢 Inside login method:
+ Inside login method:
 
 ```java
 authenticationManager.authenticate(
@@ -30,21 +30,21 @@ authenticationManager.authenticate(
 );
 ```
 
-📌 This **triggers Spring Security**:
+ This **triggers Spring Security**:
 
 * Calls your `CustomUserDetailsService.loadUserByUsername()`
 * Loads user from DB using `RegisterDetailsRepository`
 * Compares encoded password
 * If successful → returns an `Authentication` object
 
-🟢 Then `JwtTokenProvider.generateToken()` is called:
+ Then `JwtTokenProvider.generateToken()` is called:
 
 * Generates a signed token with user info
 * Returns token in a `JwtResponse`
 
 ---
 
-### ✅ Step 3: **Client Sends Requests with JWT**
+###  Step 3: **Client Sends Requests with JWT**
 
 Now the user includes the JWT in the **Authorization Header**:
 
@@ -54,7 +54,7 @@ Authorization: Bearer <token>
 
 ---
 
-### ✅ Step 4: **JWT Filter Intercepts Requests**
+###  Step 4: **JWT Filter Intercepts Requests**
 
 * Class: `JwtAuthenticationFilter`
 * It runs **before any controller** method is called
@@ -67,11 +67,11 @@ Authorization: Bearer <token>
 4. Calls `JwtTokenProvider.validateToken(token)`
 5. If valid, sets up Spring Security context (`SecurityContextHolder`)
 
-📌 Now Spring thinks the user is "logged in" and authenticated.
+ Now Spring thinks the user is "logged in" and authenticated.
 
 ---
 
-### ✅ Step 5: **Authorized Access to Protected APIs**
+###  Step 5: **Authorized Access to Protected APIs**
 
 Any endpoint that is **not `/api/auth/**`** is protected:
 
@@ -96,7 +96,7 @@ You can now use annotations like:
 
 ---
 
-## 🔐 JWT Package Roles
+##  JWT Package Roles
 
 | File                      | Role                                              |
 | ------------------------- | ------------------------------------------------- |
@@ -106,7 +106,7 @@ You can now use annotations like:
 
 ---
 
-## ⚙️ Config Package Roles
+##  Config Package Roles
 
 | File                    | Role                                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------ |
@@ -115,7 +115,7 @@ You can now use annotations like:
 
 ---
 
-## 👤 `CustomUserDetailsService`
+##  `CustomUserDetailsService`
 
 Implements:
 
@@ -130,7 +130,7 @@ Used by:
 
 ---
 
-## 🧭 Flow Summary
+##  Flow Summary
 
 ```
 Register → Save encoded user + roles
