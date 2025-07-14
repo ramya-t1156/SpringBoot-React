@@ -1,5 +1,6 @@
-## NOTES 
-## for my learning 
+## NOTES (for my learning )
+# Basics of Spring and SpringBoot setup
+
 ### What is Spring and What Are Beans?
 
 * **Spring Framework** is a popular Java framework for building enterprise applications.
