@@ -1,4 +1,4 @@
-## 💥 What is CSRF? (In simple words)
+## What is CSRF? (In simple words)
 
 **CSRF** means **Cross-Site Request Forgery**.
 
@@ -6,7 +6,7 @@ It is when a **bad website** tricks a **logged-in user** into doing something **
 
 ---
 
-### 😯 Real-Life Example (Easy to Understand)
+### Real-Life Example (Easy to Understand)
 
 Let’s say:
 
@@ -19,19 +19,19 @@ Result: The bank thinks **you sent money**, but **you didn’t** — the hacker 
 
 ---
 
-## 🛡️ What does Spring Boot do?
+## What does Spring Boot do?
 
 Spring Boot uses **Spring Security**, which helps **protect your website** from CSRF attacks by using something called a **CSRF token**.
 
 ---
 
-### 🧪 What is a CSRF token?
+### What is a CSRF token?
 
 * A **secret code** (token) is given to your form.
 * When you submit the form, the token is sent with it.
 * Spring Boot checks:
 
-  > ❓"Is this token valid?"
+  > "Is this token valid?"
 * If yes → Allow the request
   If no → **Block the request**
 
@@ -39,14 +39,14 @@ This means: **Hackers can't trick you**, because **they don’t know the secret 
 
 ---
 
-## ✅ Default Behavior in Spring Boot
+## Default Behavior in Spring Boot
 
 * If you're making **web pages with login forms**, CSRF protection is **automatically turned ON**.
 * You don’t need to do anything!
 
 ---
 
-### ❌ When do we turn it OFF?
+### When do we turn it OFF?
 
 If you're building a:
 
@@ -69,9 +69,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 
 ---
 
-### 📝 Summary (Very Short)
+###  Summary (Very Short)
 
-| 🔸                   | 🔹                                                    |
 | -------------------- | ----------------------------------------------------- |
 | **CSRF**             | A hacker tricking a logged-in user to perform actions |
 | **Spring Boot**      | Protects you by using a CSRF token                    |
