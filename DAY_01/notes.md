@@ -1,4 +1,5 @@
-## for my learning - notes 
+## NOTES 
+## for my learning 
 ### What is Spring and What Are Beans?
 
 * **Spring Framework** is a popular Java framework for building enterprise applications.
