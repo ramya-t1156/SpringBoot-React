@@ -1,5 +1,5 @@
-## NOTES (for my learning )
-# Basics of Spring and SpringBoot setup
+# NOTES (for my learning )
+## Basics of Spring and SpringBoot setup
 
 ### What is Spring and What Are Beans?
 
