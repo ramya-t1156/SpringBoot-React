@@ -21,7 +21,6 @@ public JwtResponse authenticate(RegisterDetails login) {
     return new JwtResponse(token, username, joinedRoles);
 }
 
-
 ------------- 
 
 //    Generates a signed JWT token for an authenticated user.
