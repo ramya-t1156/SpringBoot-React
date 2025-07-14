@@ -68,14 +68,3 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
 ```
 
 ---
-
-###  Summary (Very Short)
-
-| -------------------- | ----------------------------------------------------- |
-| **CSRF**             | A hacker tricking a logged-in user to perform actions |
-| **Spring Boot**      | Protects you by using a CSRF token                    |
-| **Token**            | A hidden secret added to forms                        |
-| **When needed?**     | Needed for web forms with sessions                    |
-| **When not needed?** | Not needed for REST APIs using JWT or tokens          |
-
----
