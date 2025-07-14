@@ -15,7 +15,7 @@ In short:
 
 ## Simple Example
 
-### You ➡ Server A (Gateway) ➡ Server B (Actual App)
+### You  Server A (Gateway)  Server B (Actual App)
 
 * You send a request to **Server A**.
 * Server A sends your request to **Server B** (real backend).
