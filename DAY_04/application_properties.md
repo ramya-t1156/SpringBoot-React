@@ -57,9 +57,9 @@ This is a **critical setting** that controls how Hibernate handles database sche
 | Value         | Meaning                                                                                  |
 | ------------- | ---------------------------------------------------------------------------------------- |
 | `none`        | Do nothing (you manage schema manually).                                                 |
-| `create`      | Drops existing schema and creates new tables at every app start. ⚠️ **Deletes data!**    |
+| `create`      | Drops existing schema and creates new tables at every app start.  **Deletes data!**    |
 | `create-drop` | Same as `create`, but drops tables when app stops.                                       |
-| `update`      | **Safely updates schema** (adds columns, etc.); keeps existing data. ✅ Common during dev |
+| `update`      | **Safely updates schema** (adds columns, etc.); keeps existing data.  Common during dev |
 | `validate`    | Verifies if schema matches your JPA models (throws error if mismatch).                   |
 
  `update` is useful in development, but **not recommended for production**.
