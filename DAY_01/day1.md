@@ -1,5 +1,5 @@
 ## for my learning - notes 
-### 🧠 What is Spring and What Are Beans?
+### What is Spring and What Are Beans?
 
 * **Spring Framework** is a popular Java framework for building enterprise applications.
 * A **Bean** in Spring is just a **Java object that is managed by the Spring Container**.
@@ -7,7 +7,7 @@
 
 ---
 
-## 🗂️ File 1: `App.java`
+## File 1: `App.java`
 
 ```java
 package org.example;
@@ -121,7 +121,7 @@ public class App
 
 ---
 
-## 📄 File 2: `resources.xml`
+##  File 2: `resources.xml`
 
 This is the **Spring configuration file** where you define beans.
 
@@ -163,7 +163,7 @@ This is the **Spring configuration file** where you define beans.
 
 ---
 
-## 🧾 Summary of Flow
+##  Summary of Flow
 
 1. Spring container (`ApplicationContext`) loads `resources.xml`.
 2. Spring reads the `<bean>` tags and creates those objects.
