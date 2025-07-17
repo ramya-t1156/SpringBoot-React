@@ -1,1 +1,0 @@
-Learnt how to style an Button component using bootsrap
